@@ -1,0 +1,9 @@
+{% extends 'notes/base.html' %}
+{% block content %}
+  <h1 class="text-2xl font-semibold mb-4">Today's Note – {{ today }}</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Save Note</button>
+  </form>
+{% endblock %}
